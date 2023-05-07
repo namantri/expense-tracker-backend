@@ -5,6 +5,7 @@ import { errorMiddleware } from "./middlewares/error.js";
 import router from "./routes/users.js";
 import expenseRouter from "./routes/expenses.js";
 import cors from "cors";
+import adminRouter from "./routes/admin.js";
 export const app = express();
 config({
   path: "./data/config.env",
@@ -21,4 +22,5 @@ app.use(
 );
 app.use("/api/v1/users", router);
 app.use("/api/v1/expense", expenseRouter);
+app.use("/api/v1/admin", adminRouter);
 app.use(errorMiddleware);
