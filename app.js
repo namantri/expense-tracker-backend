@@ -23,4 +23,4 @@ app.use(
 app.use("/api/v1/users", router);
 app.use("/api/v1/expense", expenseRouter);
 app.use("/api/v1/admin", adminRouter);
-app.use(errorMiddleware);
+app.use(errorMiddleware); 

@@ -11,7 +11,7 @@ export const sendCookies = (user, res, message, statusCode = 200) => {
     .status(statusCode)
     .cookie("token", token, {
       httpOnly: true,
-      maxAge: 15 * 60 * 1000,
+      maxAge: 180 * 60 * 1000,
     //   // so that we can send cookies in CROSS platform but using this we can not use this postman
       sameSite: process.env.NODE_ENV === "Development" ? "lax" : "none",
       secure: process.env.NODE_ENV === "Development" ? false : true,

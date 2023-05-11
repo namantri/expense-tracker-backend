@@ -69,13 +69,13 @@ export const deleteTask = async (req, res, next) => {
   }
 };
 export const allExpense = async (req, res, next) => {
-    try {
-      const users = await Expense.find({});
-      res.json({
-        success: true,
-        users,
-      });
-    } catch (error) {
-      next(error);
-    }
-  };
+  try {
+    const users = await Expense.find({});
+    res.json({
+      success: true,
+      users,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
