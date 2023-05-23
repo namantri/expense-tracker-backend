@@ -12,7 +12,7 @@ export const register = async (req, res, next) => {
     user = await User.create({
       name,
       email,
-      password:hashedPassword,
+      password: hashedPassword,
       location,
     });
     sendCookies(user, res, "Registered Successfully", 201);
@@ -58,6 +58,24 @@ export const getAllUser = async (req, res, next) => {
     res.json({
       success: true,
       users,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+export const postImage = async (req, res, next) => {
+  try {
+    const { imgSrc } = req.body;
+    const update = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        imgSrc,
+      },
+      { new: true }
+    );
+    res.status(201).json({
+      success: true,
+      message: "Image Data Updated Successfully",
     });
   } catch (error) {
     next(error);

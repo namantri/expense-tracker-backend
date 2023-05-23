@@ -23,5 +23,10 @@ const schema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  imgSrc: {
+    required: true,
+    type: String,
+    default: "#",
+  },
 });
 export const User = mongoose.model("User", schema);
