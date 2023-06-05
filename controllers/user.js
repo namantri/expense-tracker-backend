@@ -33,7 +33,7 @@ export const login = async (req, res, next) => {
   }
 };
 export const getUser = (req, res) => {
-  console.log(req.user);
+  // console.log(req.user);
   res.status(200).json({
     success: true,
     user: req.user,
